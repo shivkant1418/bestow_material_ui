@@ -15,7 +15,24 @@ config.webpacker.check_yarn_integrity = false
 
   # Full error reports are disabled and caching is turned on.
   config.consider_all_requests_local       = false
+
   config.action_controller.perform_caching = true
+
+  # config.action_mailer.default_url_options = { :host => 'murmuring-reaches-90852.herokuapp.com' }
+  # config.action_mailer.delivery_method = :smtp
+  # config.action_mailer.perform_deliveries = true
+  # config.action_mailer.raise_delivery_errors = true
+  # config.action_mailer.default :charset => "utf-8"
+  
+  # config.action_mailer.smtp_settings = {
+  #   :enable_starttls_auto => true,
+  #   :address => 'smtp.gmail.com',
+  #   :port => 587,
+  #   :authentication => :plain,
+  #   :domain => 'gmail.com',
+  #   :user_name => 'dohaliyashivkant161996@gmail.com',
+  #   :password => 'Shiv@1234'
+  # }
 
   # Attempt to read encrypted secrets from `config/secrets.yml.enc`.
   # Requires an encryption key in `ENV["RAILS_MASTER_KEY"]` or
