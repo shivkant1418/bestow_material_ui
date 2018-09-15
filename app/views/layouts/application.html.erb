@@ -10,7 +10,43 @@
     <%= javascript_pack_tag 'application' %>
   </head>
 
+  <nav>
+    <div>
+      <div>
+        <%= link_to 'Devise Demo', root_path%>
+      </div>
+      <div>
+        <ul>
+          <li><%= link_to 'Home', root_path %></li>
+        </ul>
+        <ul>
+          <% if user_signed_in? %>
+            <li>
+              <a href="#">
+                <%= current_user.first_name %>
+              </a>
+              <ul>
+                <li><%= link_to 'Profile', edit_user_registration_path %></li>
+                <li><%= link_to 'Log out', destroy_user_session_path, method: :delete %></li>
+              </ul>
+            </li>
+          <% else %>
+            <li><%= link_to 'Log In', new_user_session_path %></li>
+            <li><%= link_to 'Sign Up', new_user_registration_path %></li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <% flash.each do |key, value| %>
+    <%= value %>
+  <% end %>
+
+  <%= yield :top_content %>
+
   <body>
+    <h1><%= yield :header %></h1>
     <%= yield %>
   </body>
 </html>
